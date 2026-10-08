@@ -1,0 +1,118 @@
+.appContainer {
+  height: 100vh; 
+  width: 100vw; 
+  overflow-y: auto; 
+  border-radius: 12px; 
+  border: 1px solid rgba(59, 130, 246, 0.3); 
+  position: relative; 
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
+}
+
+.mainContent {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 20px 40px 100px 40px; 
+  position: relative; 
+  z-index: 10;
+}
+
+.titlebar {
+  height: 35px; 
+  background: rgba(5,5,8,0.9); 
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: center; 
+  padding: 0 15px; 
+  border-top-left-radius: 12px; 
+  border-top-right-radius: 12px; 
+  border-bottom: 1px solid var(--border-color); 
+  position: relative; 
+  z-index: 50;
+}
+
+.titlebarBtn {
+  background: transparent; 
+  border: none; 
+  color: #64748b; 
+  padding: 5px; 
+  margin-left: 10px; 
+  transition: 0.2s; 
+  cursor: none;
+}
+.titlebarBtn:hover { color: white; transform: scale(1.1); }
+.titlebarClose:hover { color: #ef4444; }
+
+/* WIDGET STYLES */
+.widgetContainer {
+  width: 100vw; 
+  height: 100vh; 
+  background-color: transparent !important; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  justify-content: flex-start; 
+  padding: 10px; 
+  overflow: visible !important; 
+}
+
+.widgetDragHandle {
+  width: 65px; 
+  height: 20px; 
+  background: linear-gradient(to bottom, rgba(15,15,20,0.95), rgba(10,10,15,0.95)); 
+  border: 1px solid rgba(59, 130, 246, 0.4); 
+  border-top-left-radius: 12px; 
+  border-top-right-radius: 12px; 
+  border-bottom: none; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  color: #3b82f6; 
+  margin-bottom: -2px; 
+  z-index: 10; 
+  box-shadow: 0 -5px 15px rgba(59,130,246,0.1);
+}
+
+.widgetBubble {
+  width: 65px; 
+  height: 65px; 
+  background: radial-gradient(circle at 30% 30%, rgba(30,40,60,0.95) 0%, rgba(5,5,10,0.95) 100%); 
+  border: 2px solid rgba(59, 130, 246, 0.8); 
+  border-radius: 50%; 
+  border-top-left-radius: 4px; 
+  border-top-right-radius: 4px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  box-shadow: 0 0 25px var(--primary-glow), inset 0 0 20px rgba(59,130,246,0.4); 
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+  color: #60a5fa; 
+  position: relative; 
+  z-index: 11;
+}
+.widgetBubble:hover { transform: scale(1.05); box-shadow: 0 0 40px var(--primary-glow); color: white; }
+
+.widgetMenu {
+  margin-top: 15px; 
+  background: rgba(5, 5, 8, 0.85); 
+  backdrop-filter: blur(20px); 
+  border: 1px solid rgba(59, 130, 246, 0.3); 
+  border-radius: 16px; 
+  width: 280px; 
+  padding: 20px; 
+  box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 30px rgba(59,130,246,0.15); 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  position: relative; 
+  overflow: hidden;
+}
+.widgetMenu::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; 
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.gridContainer {
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+  gap: 25px;
+}

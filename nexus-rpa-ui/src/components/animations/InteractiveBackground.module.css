@@ -1,0 +1,70 @@
+.backgroundWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  /* HADI HIYA LI FIXAT L'MOUCHKIL DYAL L'PC LI KAY-BAN */
+  background-color: #02040a !important; 
+}
+
+.ambientGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  background: rgba(37, 99, 235, 0.12);
+  filter: blur(120px);
+  border-radius: 50%;
+  animation: pulseGlow 4s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.baseGrid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.5;
+}
+
+.glowGrid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.8) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.8) 2px, transparent 2px);
+  background-size: 40px 40px;
+  filter: blur(2px);
+  animation: gridFlash 2s infinite alternate ease-in-out;
+}
+
+@keyframes gridFlash {
+  0% { opacity: 0.05; }
+  100% { opacity: 0.6; filter: blur(3px) drop-shadow(0 0 10px rgba(59,130,246,0.8)); }
+}
+
+.mouseGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  margin-left: -300px;
+  margin-top: -300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.25) 0%, rgba(168,85,247,0.1) 40%, transparent 70%);
+  filter: blur(50px);
+  transition: transform 0.05s ease-out;
+}
